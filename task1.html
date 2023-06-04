@@ -1,0 +1,40 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const getDate = () => {
+        const d = new Date().toString().split(" ");
+        const day = d[2],
+          month = d[1],
+          year = d[3];
+        const date = day + "/" + month + "/" + year;
+        const p = document.getElementById("dispDate")
+          ? document.getElementById("dispDate")
+          : document.createElement("p");
+        p.id = "dispDate";
+        p.innerText = date;
+        document
+          .getElementById(event.target.id)
+          .insertAdjacentElement("afterend", p);
+      };
+      const getTime = () => {
+        const time = new Date();
+        const p = document.getElementById("dispTime")
+          ? document.getElementById("dispTime")
+          : document.createElement("p");
+        p.id = "dispTime";
+        p.innerText = time;
+        document
+          .getElementById(event.target.id)
+          .insertAdjacentElement("afterend", p);
+      };
+    </script>
+  </head>
+  <body>
+    <button onClick="getDate()" id="date">Date</button> <br /><br />
+    <button onClick="getTime()" id="time">Time</button>
+  </body>
+</html>
